@@ -1,3 +1,5 @@
 #!/bin/sh
-(cat "../ex01/hh.csv" | head -n 1; 
- cat "../ex01/hh.csv" | tail -n +2 | sort -t "," -k2 -k1n ) > hh_sorted.csv
+
+f="../ex01/hh.csv"
+cat $f | head -n 1 > hh_sorted.csv 
+cat $f | tail -n +2 | sort -t "," -k2,2 -k1,1n  >> hh_sorted.csv
