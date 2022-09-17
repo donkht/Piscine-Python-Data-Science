@@ -1,1 +1,2 @@
-curl  https://api.hh.ru/vacancies?text=$1 | jq '.' > hh.json
+#!/bin/sh
+curl -A 'User-Agent: api-test-agent' https://api.hh.ru/vacancies?text=$1 | jq '.' > hh.json
