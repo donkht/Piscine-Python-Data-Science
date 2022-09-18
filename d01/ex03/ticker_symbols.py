@@ -1,6 +1,6 @@
 import sys
 
-def stock_prices():
+def ticker_symbols():
     COMPANIES = {
         'Apple': 'AAPL',
         'Microsoft': 'MSFT',
@@ -14,12 +14,15 @@ def stock_prices():
         'NFLX': 416.90,
         'TSLA': 724.88,
         'NOK': 3.37
-        }
+        }    
     if len(sys.argv) == 2:
-        if sys.argv[1].capitalize() in COMPANIES:
-            print(STOCKS[COMPANIES[sys.argv[1].capitalize()]])
+        if sys.argv[1].upper() in STOCKS:
+            for key, value in COMPANIES.items():
+                if COMPANIES[key] == sys.argv[1].upper():
+                    print(key + " " + str(STOCKS[sys.argv[1].upper()]))
         else:
-            print("Unknown company")
+            print("Unknown ticker")
+
 
 if __name__ == '__main__':
-    stock_prices()
+    ticker_symbols()
