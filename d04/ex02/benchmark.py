@@ -25,11 +25,11 @@ def benchmark():
     if len(sys.argv) == 3:
         if sys.argv[1] == 'loop':
             print(timeit.timeit(setup=f_loop, number=int(sys.argv[2])))
-        if sys.argv[1] == 'list_comprehension':
+        elif sys.argv[1] == 'list_comprehension':
             print(timeit.timeit(setup=f_comprehension, number=int(sys.argv[2])))
-        if sys.argv[1] == 'map':
+        elif sys.argv[1] == 'map':
             print(timeit.timeit(setup=f_map, number=int(sys.argv[2])))
-        if sys.argv[1] == 'filter':
+        elif sys.argv[1] == 'filter':
             print(timeit.timeit(setup=f_filter, number=int(sys.argv[2])))
         else:
             print("incorrect argument")
